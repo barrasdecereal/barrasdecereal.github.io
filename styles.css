@@ -24,10 +24,11 @@ header {
     margin: 0 15px;
 }
 
-#confirmation {
-    margin-top: 20px;
+#total-price {
+    font-size: 1.25em;
 }
 
-.hide {
-    display: none;
+.modal {
+    max-width: 400px;
+    padding: 20px;
 }

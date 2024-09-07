@@ -37,14 +37,17 @@
 
         <!-- Order Button -->
         <div class="center-align">
-            <button id="finalize-order" class="btn blue">Finalizar Pedido</button>
+            <button id="finalize-order" class="btn blue modal-trigger" href="#order-confirmation-modal">Finalizar Pedido</button>
         </div>
     </main>
 
-    <!-- Order Confirmation Section -->
-    <div id="confirmation" class="hide center-align">
-        <h5>¡Tu pedido ha sido realizado!</h5>
-        <p>A la brevedad nos estaremos comunicando.</p>
+    <!-- Floating Confirmation Modal -->
+    <div id="order-confirmation-modal" class="modal">
+        <div class="modal-content center-align">
+            <h5>¡Tu pedido ha sido realizado!</h5>
+            <p>A la brevedad nos estaremos comunicando.</p>
+            <button id="back-home" class="btn green modal-close">Volver a Inicio</button>
+        </div>
     </div>
 
     <!-- Import Materialize JS -->
