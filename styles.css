@@ -1,0 +1,33 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-color: #3f51b5;
+    color: white;
+    padding: 20px 0;
+}
+
+.quantity-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.quantity-control button {
+    margin: 0 15px;
+}
+
+.product-count {
+    font-size: 1.5em;
+    margin: 0 15px;
+}
+
+#confirmation {
+    margin-top: 20px;
+}
+
+.hide {
+    display: none;
+}
