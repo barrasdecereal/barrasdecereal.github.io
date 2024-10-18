@@ -153,6 +153,60 @@
             font-size: 16px;
             color: #666;
         }
+        .about {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .about-text {
+            max-width: 50%;
+        }
+        .about h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .about p {
+            margin-bottom: 20px;
+        }
+        .about-image {
+            width: 45%;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .about-image img {
+            width: 100%;
+            height: auto;
+        }
+        .testimonials {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        .testimonials h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        .testimonial-item {
+            background-color: #f8f8f8;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        .testimonial-item p {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        .testimonial-author {
+            font-weight: 600;
+        }
         footer {
             background-color: #333;
             color: #fff;
@@ -171,6 +225,68 @@
         .social-links a:hover {
             color: #ff6b6b;
         }
+        .hero {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        background-color: #f9f9f9;
+        overflow: hidden;
+        position: relative;
+    }
+    .hero-content {
+        max-width: 50%;
+        z-index: 2;
+        padding: 20px;
+        background-color: rgba(249, 249, 249, 0.8); /* Fondo semi-transparente */
+        border-radius: 10px;
+    }
+    .hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        color: #333;
+    }
+    .hero p {
+        font-size: 18px;
+        margin-bottom: 30px;
+        color: #666;
+    }
+    .slider {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 1;
+    }
+    .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .slide.active {
+        opacity: 1;
+    }
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .slider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); /* Overlay oscuro semi-transparente */
+    z-index: 1;
+}
+
     </style>
 </head>
 <body>
@@ -180,6 +296,8 @@
             <ul class="nav-links">
                 <li><a href="#home">Inicio</a></li>
                 <li><a href="#features">Características</a></li>
+                <li><a href="#about">Sobre nosotros</a></li>
+                <li><a href="#testimonials">Testimonios</a></li>
                 <li><a href="#contact">Contacto</a></li>
             </ul>
         </nav>
@@ -189,19 +307,19 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Barritas de Cereal Artesanales</h1>
-                <p>Descubre el sabor y la energía de nuestras barritas de cereal hechas con ingredientes 100% naturales y 50% de frutos secos.</p>
-                <a href="https://www.instagram.com/crunch_barritas/?hl=es" class="cta-button">Comprar ahora</a>
+                <p>Descubre el sabor y la energía de nuestras barritas de cereal hechas con ingredientes 100% naturales y 50% de frutos secos. La alternativa perfecta para reducir el consumo de harinas de forma fácil y deliciosa.</p>
+                <a href="#" class="cta-button">Comprar ahora</a>
             </div>
         </div>
         <div class="slider">
             <div class="slide active">
-                <img src="./images/1.jpg" alt="Barrita de cereal">
+                <img src="images/1.jpg" alt="Barrita de cereal">
             </div>
             <div class="slide">
-                <img src="./images/2.jpg" alt="Ingredientes naturales">
+                <img src="images/2.jpg" alt="Ingredientes naturales">
             </div>
             <div class="slide">
-                <img src="./images/3.jpg" alt="Empaque ecológico">
+                <img src="images/3.jpg" alt="Empaque ecológico">
             </div>
         </div>
     </section>
@@ -213,17 +331,64 @@
                 <div class="feature-item">
                     <i class="fas fa-leaf"></i>
                     <h3>100% Natural</h3>
-                    <p>Ingredientes selectos sin aditivos artificiales.</p>
+                    <p>Ingredientes selectos sin aditivos artificiales ni conservantes.</p>
                 </div>
                 <div class="feature-item">
                     <i class="fas fa-heartbeat"></i>
                     <h3>Saludable</h3>
-                    <p>Rica fuente de proteínas y grasas saludables.</p>
+                    <p>Rica fuente de proteínas, fibra y grasas saludables para tu bienestar.</p>
                 </div>
                 <div class="feature-item">
                     <i class="fas fa-hand-holding-heart"></i>
                     <h3>Artesanal</h3>
-                    <p>Elaboradas con amor y cuidado en cada detalle.</p>
+                    <p>Elaboradas con amor y cuidado en cada detalle para ofrecerte lo mejor.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-wheat-awn-circle-exclamation"></i>
+                    <h3>Sin Harinas Refinadas</h3>
+                    <p>Perfectas para reducir el consumo de harinas de forma práctica y deliciosa.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Habilitación Bromatológica</h3>
+                    <p>Cumplimos con todos los estándares de calidad y seguridad alimentaria.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Sustentable</h3>
+                    <p>Comprometidos con el medio ambiente en nuestro proceso de producción.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Descubre la Diferencia Crunch</h2>
+                    <p>En Crunch, nos apasiona crear barritas de cereal que no solo sean deliciosas, sino que también contribuyan a tu bienestar. Nuestras barritas están diseñadas para ayudarte a reducir el consumo de harinas refinadas de una manera fácil y práctica.</p>
+                    <p>Con un 50% de frutos secos cuidadosamente seleccionados, nuestras barritas te ofrecen una explosión de sabor y nutrientes en cada bocado. Son ideales para mantener tus niveles de energía estables a lo largo del día, evitando los picos de azúcar asociados con los snacks tradicionales.</p>
+                    <p>Además, al elegir Crunch, estás optando por un producto con habilitación bromatológica, lo que garantiza que cumplimos con los más altos estándares de calidad y seguridad alimentaria. Nuestro compromiso es ofrecerte un producto que no solo sea bueno para ti, sino también para el planeta.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/2.jpg" alt="Ingredientes naturales">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>Lo que dicen nuestros clientes</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-item">
+                    <p>"Desde que descubrí las barritas Crunch, he logrado reducir mi consumo de harinas sin sentirme privada. Son deliciosas y me dan la energía que necesito para mi día a día."</p>
+                    <span class="testimonial-author">- María L.</span>
+                </div>
+                <div class="testimonial-item">
+                    <p>"Como deportista, siempre busco snacks saludables. Las barritas Crunch son perfectas: naturales, nutritivas y realmente satisfactorias. ¡No puedo dejar de recomendarlas!"</p>
+                    <span class="testimonial-author">- Carlos G.</span>
                 </div>
             </div>
         </div>
@@ -232,6 +397,7 @@
     <footer id="contact">
         <div class="container">
             <p>&copy; 2024 Crunch - Barritas de Cereal. Todos los derechos reservados.</p>
+            <p>Producto con habilitación bromatológica. Elaborado bajo estrictos controles de calidad.</p>
             <div class="social-links">
                 <a href="#"><i class="fab fa-facebook"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
