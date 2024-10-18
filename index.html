@@ -3,56 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Negocio Móvil</title>
-    <!-- Link to Material Icons and Material Design -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <title>Crunch - Barritas de Cereal Artesanales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: #f8f8f8;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #4a4a4a;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            margin-left: 30px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #4a4a4a;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #ff6b6b;
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background-color: #f9f9f9;
+            overflow: hidden;
+            position: relative;
+        }
+        .hero-content {
+            max-width: 600px;
+            z-index: 1;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #666;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6b6b;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #ff5252;
+        }
+        .slider {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            opacity: 1;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .features {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        .features h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .feature-item {
+            text-align: center;
+            padding: 30px;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .feature-item:hover {
+            transform: translateY(-10px);
+        }
+        .feature-item i {
+            font-size: 48px;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+        }
+        .feature-item h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .feature-item p {
+            font-size: 16px;
+            color: #666;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .social-links {
+            margin-top: 20px;
+        }
+        .social-links a {
+            color: #fff;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: #ff6b6b;
+        }
+    </style>
 </head>
 <body>
-    <!-- Business Name -->
-    <header class="center-align">
-        <h3 id="business-name">Negocio Móvil</h3>
+    <header>
+        <nav class="container">
+            <div class="logo">Crunch</div>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#features">Características</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Product Control Section -->
-    <main class="container">
-        <div class="card center-align">
-            <div class="card-content">
-                <h5>Producto: Nombre del Producto</h5>
-                <p>Precio por unidad: $1500</p>
-                
-                <!-- Quantity Control Buttons -->
-                <div class="quantity-control">
-                    <button id="decrease" class="btn red darken-1"><i class="material-icons">remove</i></button>
-                    <span id="product-count" class="product-count">0</span>
-                    <button id="increase" class="btn green darken-1"><i class="material-icons">add</i></button>
-                </div>
-
-                <!-- Display Total Amount -->
-                <p id="total-price">Total: $0</p>
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Barritas de Cereal Artesanales</h1>
+                <p>Descubre el sabor y la energía de nuestras barritas de cereal hechas con ingredientes 100% naturales y 50% de frutos secos.</p>
+                <a href="https://www.instagram.com/crunch_barritas/?hl=es" class="cta-button">Comprar ahora</a>
             </div>
         </div>
-
-        <!-- Order Button -->
-        <div class="center-align">
-            <!-- Finalize Order Button linked to modal -->
-            <button id="finalize-order" class="btn blue modal-trigger" href="#order-confirmation-modal">Finalizar Pedido</button>
+        <div class="slider">
+            <div class="slide active">
+                <img src="images/1.jpg" alt="Barrita de cereal">
+            </div>
+            <div class="slide">
+                <img src="images/2.jpg" alt="Ingredientes naturales">
+            </div>
+            <div class="slide">
+                <img src="images/3.jpg" alt="Empaque ecológico">
+            </div>
         </div>
-    </main>
+    </section>
 
-    <!-- Floating Confirmation Modal -->
-    <div id="order-confirmation-modal" class="modal">
-        <div class="modal-content center-align">
-            <h5>¡Tu pedido ha sido realizado!</h5>
-            <p>A la brevedad nos estaremos comunicando.</p>
-            <button id="back-home" class="btn green modal-close">Volver a Inicio</button>
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Por qué elegir nuestras barritas</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <i class="fas fa-leaf"></i>
+                    <h3>100% Natural</h3>
+                    <p>Ingredientes selectos sin aditivos artificiales.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Saludable</h3>
+                    <p>Rica fuente de proteínas y grasas saludables.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Artesanal</h3>
+                    <p>Elaboradas con amor y cuidado en cada detalle.</p>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Import Materialize JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="scripts.js"></script>
+    <footer id="contact">
+        <div class="container">
+            <p>&copy; 2024 Crunch - Barritas de Cereal. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Slider functionality
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    </script>
 </body>
 </html>
